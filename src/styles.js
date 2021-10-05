@@ -56,3 +56,29 @@ export const ListContainer = styled.div`
         }
     }
 `
+
+export const Header = styled.header`
+    height: 100vh;
+    background-image: url("https://image.tmdb.org/t/p/original//4N6zEMfZ57zNEQcM8gWeERFupMv.jpg");
+    background-size: cover;
+    background-position: center;
+    div{
+        width: inherit;
+        height: inherit;
+    }
+    .vertical-gradient{
+        background:  linear-gradient(to bottom, rgba(0,0,0,0) 10%, rgba(01,01,01, 1));
+    }
+    .horizontal-gradient{
+        background:  linear-gradient(to left, rgba(0,0,0,0) 10%, rgba(01,01,01, 1));
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 16px;
+        h1{
+            color: red;
+        }
+    }
+
+`
+
