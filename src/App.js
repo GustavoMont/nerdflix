@@ -7,14 +7,16 @@ import Outdoor from './Components/Outdoor';
 
 function App() {
   const [content, setContent] = useState([])
-  const [pic, setPic] = useState(null)
+  const [outdoor, setOutdoor] = useState(null)
 
+  const randomGenerator = (length) => Math.floor( Math.random() * (length - 1)) 
 
   useEffect(() =>{
     (async ()=>{
       const conteudo = await getContent()
       setContent(conteudo)
-      setPic(conteudo[0].lista[0].backdrop_path)
+      const index = randomGenerator(conteudo[0].lista.length)
+      setOutdoor(conteudo[0].lista[index].backdrop_path)
     })()
   }, [])
 
@@ -23,7 +25,7 @@ function App() {
       <GlobalStyle />
       <div className="App">
         <>
-        {pic && <Outdoor pic={pic} />}
+        {outdoor && <Outdoor pic={outdoor} />}
           {
             content.map(item => <MovieList content={item} key={item.title}/>)
           }
