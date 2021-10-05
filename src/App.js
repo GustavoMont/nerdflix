@@ -26,9 +26,11 @@ function App() {
       <div className="App">
         <>
         {outdoor && <Outdoor pic={outdoor} />}
+        <main style={{marginTop: -220}}>
           {
             content.map(item => <MovieList content={item} key={item.title}/>)
           }
+        </main>
         </>
       </div>
     </>
