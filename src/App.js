@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { getContent } from './Utils/getContent'
 import MovieList from './Components/MovieList'
+import { GlobalStyle } from './styles'
+
 
 function App() {
   const [content, setContent] = useState([])
@@ -13,13 +15,16 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      <>
-        {
-          content.map(item => <MovieList content={item} />)
-        }
-      </>
-    </div>
+    <>
+      <GlobalStyle />
+      <div className="App">
+        <>
+          {
+            content.map(item => <MovieList content={item} />)
+          }
+        </>
+      </div>
+    </>
   );
 }
 
