@@ -20,7 +20,7 @@ export const ListContainer = styled.div`
     color: white;
     overflow-x: hidden;
     background-color: rgba(10,10,10, 0.1);
-    margin: 48px 0;
+    margin: 30px 0;
     padding: 2rem;
     h3{
         margin: 12px 8px;
@@ -28,10 +28,10 @@ export const ListContainer = styled.div`
     }
     li{
         display: inline-block;
-        width: 150px;
+        width: 180px;
         list-style: none;
         vertical-align: middle;
-        img{
+        *{
             width: 100%;
             transform: scale(0.9);
             transition: ease all .3s;
@@ -41,6 +41,18 @@ export const ListContainer = styled.div`
                 border-radius: 5px;
                 transform: scale(1);
             }
+        }
+        .alternate{
+            height: 250px;
+            border: 2px solid white;
+            white-space: normal;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            background-color: #a90000;
         }
     }
 `

@@ -5,7 +5,7 @@ const BASE_URL = 'https://api.themoviedb.org/3'
 /*
     - Series (Netflix)
     - Hype (trendings)
-    - Ação (genre_id = 28)
+    - Animação (genre_id = 16)
     - Comédia  (genre_id = 35)
     - Clássicos (filter)
 */
@@ -19,14 +19,29 @@ async function baseFetch(url){
 export const getContent = async () => {
     return [
         {
-            slug: 'recomend',
-            title: 'Para Você',
+            slug: 'series',
+            title: 'Séries',
             lista:  await baseFetch(`${BASE_URL}/discover/tv?api_key=${API_KEY}&with_genres=10765`)
         },
         {
             slug: 'hype',
             title: 'Hype',
             lista: await baseFetch(`${BASE_URL}/discover/movie?api_key=${API_KEY}&language=pt-BR&sort_by=popularity.desc&with_genres=878`)
-        }
+        },
+        {
+            slug: 'action',
+            title: 'Ação',
+            lista: await baseFetch(`${BASE_URL}/discover/movie?api_key=${API_KEY}&language=pt-BR&&with_genres=878,16`)
+        },
+        {
+            slug: 'comedy',
+            title: 'Comédia',
+            lista: await baseFetch(`${BASE_URL}/discover/movie?api_key=${API_KEY}&language=pt-BR&&with_genres=878,35`)
+        },
+        {
+            slug: 'classics',
+            title: 'Clássicos',
+            lista: await baseFetch(`${BASE_URL}/discover/movie?api_key=${API_KEY}&language=pt-BR&sort_by=release_date.asc,popularity.desc&with_genres=878`)
+        },
     ]
 }
