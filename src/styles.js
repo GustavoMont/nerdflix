@@ -62,6 +62,7 @@ export const Header = styled.header`
     background-image: url(${props => url + props.background});
     background-size: cover;
     background-position: center;
+    color: white;
     .vertical-gradient, .horizontal-gradient{
         width: inherit;
         height: inherit;
@@ -81,7 +82,6 @@ export const Header = styled.header`
         padding: 0 48px;
     }
     .info{
-        color: white;
         max-width: 500px;
         text-align: justify;
         div{
