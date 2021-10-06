@@ -21,7 +21,7 @@ export const getContent = async () => {
         {
             slug: 'series',
             title: 'Séries',
-            lista:  await baseFetch(`${BASE_URL}/discover/tv?api_key=${API_KEY}&with_genres=10765`)
+            lista:  await baseFetch(`${BASE_URL}/discover/tv?api_key=${API_KEY}&with_genres=10765&language=pt-BR`)
         },
         {
             slug: 'hype',
@@ -44,4 +44,11 @@ export const getContent = async () => {
             lista: await baseFetch(`${BASE_URL}/discover/movie?api_key=${API_KEY}&language=pt-BR&sort_by=release_date.asc,popularity.desc&with_genres=878`)
         },
     ]
+}
+
+
+export async function getTvInfo(id) {
+    const req = await fetch(`${BASE_URL}/tv/${id}?api_key=${API_KEY}&language=pt-BR`)
+    const info = await req.json();
+    return info
 }

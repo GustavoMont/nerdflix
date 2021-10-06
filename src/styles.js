@@ -62,7 +62,7 @@ export const Header = styled.header`
     background-image: url(${props => url + props.background});
     background-size: cover;
     background-position: center;
-    div{
+    .vertical-gradient, .horizontal-gradient{
         width: inherit;
         height: inherit;
     }
@@ -74,11 +74,26 @@ export const Header = styled.header`
         display: flex;
         justify-content: center;
         flex-direction: column;
-        padding: 0 16px;
         h1{
             color: red;
+            font-size: 3rem;
+        }
+        padding: 0 48px;
+    }
+    .info{
+        color: white;
+        max-width: 500px;
+        text-align: justify;
+        div{
+            margin: 24px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .av{
+            color: green;
+            font-weight: 700;
         }
     }
-
+    
 `
 

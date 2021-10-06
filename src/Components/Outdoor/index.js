@@ -1,12 +1,18 @@
 import { Header } from "../../styles";
 
-function Outdoor({ pic }){
-    console.log(pic)
+function Outdoor({ content }){
     return(
-        <Header background={pic}>
+        <Header background={content.backdrop_path}>
             <div className="vertical-gradient">
                 <div className="horizontal-gradient">
-                    <h1>WORKING</h1>
+                    <h1>{content.name}</h1>
+                    <div className="info">
+                        <div>
+                            <span className="av">Nota: {content.vote_average}</span> 
+                            <span> Gênero: {content.genres[0].name} </span>
+                        </div>
+                        <p> {content.overview} </p>
+                    </div>
                 </div>
 
             </div>
