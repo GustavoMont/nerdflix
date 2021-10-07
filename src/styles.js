@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     a{
         text-decoration: none;
+        transition: ease .3s all;
     }
     body{
         font-family: 'Montserrat', sans-serif;
@@ -96,6 +97,26 @@ export const Header = styled.header`
             font-weight: 700;
         }
     }
+    .login{
+        margin: 0 auto;
+        padding: 0.5rem 1rem;
+        text-align: center;
+        h1{
+            color: white;
+            margin-bottom: 32px;
+        }
+        a{
+            background-color: #fff;
+            color: #d90912;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+        }
+        a:hover{
+            background-color: #d90912;
+            color: #fff;
+
+        }
+    }
 `
 
 export const Bar = styled.nav`
@@ -109,7 +130,7 @@ export const Bar = styled.nav`
     align-items: center;
     transition: all ease .8s;
     h1{
-        color: #f90912;
+        color: #d90912;
         font-size: 2.5rem;
         font-style: italic;
         font-weight: 700;

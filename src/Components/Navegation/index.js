@@ -3,9 +3,12 @@ import { Bar } from "../../styles";
 
 export default function Navegation() {
     let opacity = 0
-    window.onscroll = () => {
+    document.body.onscroll = () => {
         const bar = document.querySelector('nav')
         const under = document.getElementById('outdoor-title')
+        if (!(bar && under)) {
+            return
+        }
         const black = under.getBoundingClientRect().top - bar.getBoundingClientRect().bottom < 0
         const transparent = under.getBoundingClientRect().top > 180
         if (black) {
