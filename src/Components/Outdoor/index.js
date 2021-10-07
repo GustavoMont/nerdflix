@@ -1,11 +1,11 @@
 import { Header } from "../../styles";
 
-function Outdoor({ content }) {
+function Outdoor({ content, titleId }) {
     return (
-        <Header background={content.backdrop_path}>
+        <Header background={content.backdrop_path} >
             <div className="vertical-gradient">
                 <div className="horizontal-gradient">
-                    <h1>{content.name}</h1>
+                    <h1 id={titleId} >{content.name}</h1>
                     <div className="info">
                         <div>
                             <span className="av">Nota: {content.vote_average}</span>

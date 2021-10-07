@@ -76,7 +76,7 @@ export const Header = styled.header`
         justify-content: center;
         flex-direction: column;
         h1{
-            color: red;
+            color: #d90912;
             font-size: 3rem;
         }
         padding: 0 48px;
@@ -94,6 +94,26 @@ export const Header = styled.header`
             font-weight: 700;
         }
     }
-    
+`
+
+export const Bar = styled.nav`
+    background-color: rgba(0, 0, 0, var(--opacity));
+    padding: 1.2rem 3rem;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all ease .8s;
+    h1{
+        color: #f90912;
+        font-size: 2.5rem;
+        font-style: italic;
+        font-weight: 700;
+    }
+    img{
+        width: 50px;
+    }
 `
 

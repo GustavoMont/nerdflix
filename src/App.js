@@ -3,14 +3,14 @@ import { getContent, getTvInfo } from './Utils/getContent'
 import MovieList from './Components/MovieList'
 import { GlobalStyle } from './styles'
 import Outdoor from './Components/Outdoor';
+import Navegation from './Components/Navegation';
 
 
 function App() {
   const [content, setContent] = useState([])
-  const [outdoorInfo, setOutdoorInfo] = useState(null)
-
+  const [outdoorInfo, setOutdoorInfo] = useState(null) 
   const randomGenerator = (length) => Math.floor( Math.random() * (length - 1)) 
-
+  
   useEffect(() =>{
     (async ()=>{
       const conteudo = await getContent()
@@ -26,12 +26,13 @@ function App() {
       <GlobalStyle />
       <div className="App">
         <>
-        {outdoorInfo && <Outdoor content={outdoorInfo} />}
-        <main style={{marginTop: -220}}>
-          {
-            content.map(item => <MovieList content={item} key={item.title}/>)
-          }
-        </main>
+          <Navegation />
+          {outdoorInfo && <Outdoor content={outdoorInfo} titleId="outdoor-title" />}
+          <main style={{marginTop: -220}}>
+            {
+              content.map(item => <MovieList content={item} key={item.title} />)
+            }
+          </main>
         </>
       </div>
     </>
