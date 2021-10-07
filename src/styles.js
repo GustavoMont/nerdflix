@@ -1,6 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components'
 
-const url = "https://image.tmdb.org/t/p/original"
 
 export const GlobalStyle = createGlobalStyle`
     *{
@@ -62,7 +61,7 @@ export const ListContainer = styled.div`
 
 export const Header = styled.header`
     height: 100vh;
-    background-image: url(${props => url + props.background});
+    background-image: url(${props => props.background});
     background-size: cover;
     background-position: center;
     color: white;

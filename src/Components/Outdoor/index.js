@@ -1,8 +1,10 @@
 import { Header } from "../../styles";
 
+const url = "https://image.tmdb.org/t/p/original"
+
 function Outdoor({ content, titleId }) {
     return (
-        <Header background={content.backdrop_path} >
+        <Header background={url + content.backdrop_path} >
             <div className="vertical-gradient">
                 <div className="horizontal-gradient">
                     <h1 id={titleId} >{content.name}</h1>
