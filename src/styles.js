@@ -8,6 +8,9 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         box-sizing: border-box;
     }
+    a{
+        text-decoration: none;
+    }
     body{
         font-family: 'Montserrat', sans-serif;
         background-color: #010101;
