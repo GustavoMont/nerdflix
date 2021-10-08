@@ -10,7 +10,7 @@ const Home = () => {
     const [content, setContent] = useState([])
     const [outdoorInfo, setOutdoorInfo] = useState(null)
     const randomGenerator = (length) => Math.floor(Math.random() * (length - 1))
-    let { image } = useLocation()
+    let { image, isLogged } = useLocation()
     
     useEffect(() => {
         (async () => {
@@ -20,7 +20,8 @@ const Home = () => {
             const info = await getTvInfo(conteudo[0].lista[index].id)
             setOutdoorInfo(info)
         })()
-    }, [image])
+        console.log(isLogged)
+    }, [image, isLogged])
 
     return (
         <>
