@@ -137,6 +137,7 @@ export const Bar = styled.nav`
     }
     img{
         width: 50px;
+        border-radius: 50%;
     }
 `
 
