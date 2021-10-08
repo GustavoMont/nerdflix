@@ -30,7 +30,7 @@ const Home = () => {
             {outdoorInfo && <Outdoor content={outdoorInfo} titleId="outdoor-title" />}
             <main style={{ marginTop: -220 }}>
                 {
-                    content.map(item => <MovieList content={item} key={item.title} />)
+                    content.map(item => <MovieList content={item} key={item.title} className="movierow"/>)
                 }
             </main>
         </>
