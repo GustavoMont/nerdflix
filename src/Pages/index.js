@@ -4,12 +4,14 @@ import { GlobalStyle } from '../styles'
 import MovieList from '../Components/MovieList'
 import Outdoor from '../Components/Outdoor';
 import Navegation from '../Components/Navegation';
+import { useLocation } from 'react-router';
 
 const Home = () => {
     const [content, setContent] = useState([])
     const [outdoorInfo, setOutdoorInfo] = useState(null)
     const randomGenerator = (length) => Math.floor(Math.random() * (length - 1))
-
+    let { image } = useLocation()
+    
     useEffect(() => {
         (async () => {
             const conteudo = await getContent()
@@ -18,12 +20,13 @@ const Home = () => {
             const info = await getTvInfo(conteudo[0].lista[index].id)
             setOutdoorInfo(info)
         })()
-    }, [])
+    }, [image])
 
     return (
         <>
             <GlobalStyle />
-            <Navegation />
+            
+            <Navegation profilePic={ image }/>
             {outdoorInfo && <Outdoor content={outdoorInfo} titleId="outdoor-title" />}
             <main style={{ marginTop: -220 }}>
                 {
