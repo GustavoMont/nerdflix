@@ -24,11 +24,14 @@ export const ListContainer = styled.div`
     overflow-x: hidden;
     background-color: rgba(10,10,10, 0.1);
     margin: 30px 0;
-    padding: .2rem 2rem;
+    padding: .2rem 32px;
     position: relative;
     h3{
         margin: 12px 8px;
         font-size: 1.5rem;
+    }
+    ul{
+        transition: ease .5s all;
     }
     li{
         display: inline-block;
@@ -63,7 +66,7 @@ export const ListContainer = styled.div`
         background-color: rgba(0,0,0, 0.5);
         position: absolute;
         z-index: 5;
-        width: 70px;
+        width: 55px;
         height: 270px;
         top: 55px;
         display: flex;
