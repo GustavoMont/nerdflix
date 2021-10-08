@@ -15,7 +15,10 @@ const Login = () => {
         setLoggedIn(true)
     }
     
-    const failGoogle = () => setLoggedIn(false)
+    const failGoogle = (response) => {
+        setLoggedIn(false)
+        console.log(response)
+    }
     const [loggedIn, setLoggedIn] = useState(false)
     const [image, setImage] = useState(false)
     
