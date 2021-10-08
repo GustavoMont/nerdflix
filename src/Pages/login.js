@@ -40,7 +40,7 @@ const Login = () => {
                                 onFailure={failGoogle}
                                 cookiePolicy={'single_host_origin'}
                             />
-                            {loggedIn ? <Redirect exact to={{ pathname: "/", image: image}} /> : ''}
+                            {loggedIn ? <Redirect exact to={{ pathname: "/", image: image, isLogged: loggedIn}} /> : ''}
                         </div>
                     </div>
                 </div>

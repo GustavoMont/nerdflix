@@ -11,7 +11,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     return (
     <Route
         {...rest}
-        render={props => props.location.image ? (
+        render={props => props.location.isLogged ? (
                 <Component {...props} />
             ) : (
                 <Redirect to="/login" />
