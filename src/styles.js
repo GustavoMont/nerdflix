@@ -24,7 +24,8 @@ export const ListContainer = styled.div`
     overflow-x: hidden;
     background-color: rgba(10,10,10, 0.1);
     margin: 30px 0;
-    padding: 2rem;
+    padding: .2rem 2rem;
+    position: relative;
     h3{
         margin: 12px 8px;
         font-size: 1.5rem;
@@ -58,6 +59,39 @@ export const ListContainer = styled.div`
             background-color: #a90000;
         }
     }
+    .movieRow-left, .movieRow-rigth{
+        background-color: rgba(0,0,0, 0.5);
+        position: absolute;
+        z-index: 5;
+        width: 70px;
+        height: 270px;
+        top: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: ease .3s all;
+        opacity: 0;
+        svg{
+            fill: #fff;
+            transition: ease .3s all;
+            &:hover{
+                fill: #d90912;
+                transform: scale(1.3);
+            }
+        }
+    }
+    .movieRow-left{
+        left:0;
+    }
+    .movieRow-rigth{
+        right: 0;
+    }
+    &:hover .movieRow-left,
+    &:hover .movieRow-rigth{
+        opacity: 1;
+    }
+
 `
 
 export const Header = styled.header`
