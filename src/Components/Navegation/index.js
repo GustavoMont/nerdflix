@@ -1,8 +1,9 @@
 import { Bar } from "../../styles";
 
 
-export default function Navegation() {
+export default function Navegation({ profilePic }) {
     let opacity = 0
+    
     document.body.onscroll = () => {
         const bar = document.querySelector('nav')
         const under = document.getElementById('outdoor-title')
@@ -25,7 +26,7 @@ export default function Navegation() {
     return (
         <Bar id="bar">
             <h1>NERDFLIX</h1>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="avatar" />
+            <img src={profilePic} alt="avatar" />
         </Bar>
     )
 }
