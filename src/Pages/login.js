@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import { Header, GlobalStyle } from '../styles'
 import { GoogleLogin } from 'react-google-login';
 
@@ -22,6 +22,7 @@ const Login = () => {
     document.body.onscroll = null
     
     useEffect(() => {
+
     }, [loggedIn, image])
 
     return (
@@ -39,9 +40,7 @@ const Login = () => {
                                 onFailure={failGoogle}
                                 cookiePolicy={'single_host_origin'}
                             />
-                            <Route exact path="/">
-                                {loggedIn ? <Redirect to={{ pathname: "/home", image: image}} /> : ''}
-                            </Route>
+                            {loggedIn ? <Redirect exact to={{ pathname: "/", image: image}} /> : ''}
                         </div>
                     </div>
                 </div>
