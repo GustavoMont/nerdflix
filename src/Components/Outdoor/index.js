@@ -19,7 +19,6 @@ function Outdoor({ content, titleId }) {
                 </div>
 
             </div>
-
         </Header>
     )
 }

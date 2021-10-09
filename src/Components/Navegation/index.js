@@ -1,4 +1,4 @@
-import { Bar } from "../../styles";
+import { Bar } from "../../styles/Navigation";
 import { handleBackgroundColor } from '../../Utils/handleNavegation';
 
 const placeHolderUserPic = 'https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png'
