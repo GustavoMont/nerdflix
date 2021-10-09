@@ -1,7 +1,6 @@
 import { Bar } from "../../styles/Navigation";
 import { handleBackgroundColor } from '../../Utils/handleNavegation';
 
-const placeHolderUserPic = 'https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png'
 
 export default function Navegation({ profilePic }) {
     
@@ -9,7 +8,7 @@ export default function Navegation({ profilePic }) {
     return (
         <Bar id="bar">
             <h1>NERDFLIX</h1>
-            <img src={profilePic || placeHolderUserPic } alt="avatar" />
+            <img src={profilePic} alt="avatar" />
         </Bar>
     )
 }

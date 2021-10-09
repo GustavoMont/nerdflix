@@ -2,15 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { getContent, getTvInfo } from '../Utils/getContent'
 import { GlobalStyle } from '../styles/GlobalStyle'
 import MovieList from '../Components/MovieList'
+import ProfileInfo from '../Components/ProfileInfo';
 import Outdoor from '../Components/Outdoor';
 import Navegation from '../Components/Navegation';
 import { useLocation } from 'react-router';
+const placeHolderUserPic = 'https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png'
 
 const Home = () => {
     const [content, setContent] = useState([])
     const [outdoorInfo, setOutdoorInfo] = useState(null)
     const randomGenerator = (length) => Math.floor(Math.random() * (length - 1))
-    let { image, isLogged } = useLocation()
+    let { image, isLogged, name } = useLocation()
     
     useEffect(() => {
         (async () => {
@@ -21,13 +23,15 @@ const Home = () => {
             setOutdoorInfo(info)
         })()
         console.log(isLogged)
-    }, [image, isLogged])
+    }, [image, isLogged, name])
 
     return (
         <>
             <GlobalStyle />
             
-            <Navegation profilePic={ image }/>
+            <ProfileInfo profilePic={ image || placeHolderUserPic } />
+
+            <Navegation profilePic={ image || placeHolderUserPic }/>
             {outdoorInfo && <Outdoor content={outdoorInfo} titleId="outdoor-title" />}
             <main style={{ marginTop: -220 }}>
                 {
