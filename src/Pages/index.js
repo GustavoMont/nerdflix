@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getContent, getTvInfo } from '../Utils/getContent'
-import { GlobalStyle } from '../styles'
+import { GlobalStyle } from '../styles/GlobalStyle'
 import MovieList from '../Components/MovieList'
 import Outdoor from '../Components/Outdoor';
 import Navegation from '../Components/Navegation';
