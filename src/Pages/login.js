@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Redirect } from 'react-router-dom'
-import { Header, GlobalStyle } from '../styles'
+import { Header } from '../styles/Header'
+import { GlobalStyle } from '../styles'
 import { GoogleLogin } from 'react-google-login';
 
 

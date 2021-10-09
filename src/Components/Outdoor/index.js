@@ -1,4 +1,4 @@
-import { Header } from "../../styles";
+import { Header } from "../../styles/Header"
 
 const url = "https://image.tmdb.org/t/p/original"
 
