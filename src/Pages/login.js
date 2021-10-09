@@ -16,7 +16,7 @@ const Login = () => {
     }
     
     const failGoogle = () => setLoggedIn(false)
-    const [loggedIn, setLoggedIn] = useState(false)
+    const [loggedIn, setLoggedIn] = useState(true)
     const [image, setImage] = useState(false)
     
     document.body.onscroll = null
