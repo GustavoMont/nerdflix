@@ -41,7 +41,7 @@ export const ListContainer = styled.div`
             font-size: 1.5rem;
             display: flex;
             align-items: center;
-            background-color: #a90000;
+            background-color: var(--main-color);
         }
     }
     .movieRow-left, .movieRow-rigth{

@@ -11,6 +11,8 @@ const placeHolderUserPic = 'https://upload.wikimedia.org/wikipedia/commons/0/0b/
 const Home = () => {
     const [content, setContent] = useState([])
     const [outdoorInfo, setOutdoorInfo] = useState(null)
+    const themes = [{name: 'Padrão', mainColor: '#d90912'}, {name: 'Matrix', mainColor: 'rgb(48, 221, 42)'} ]
+    const [theme, setTheme] = useState(themes[0])
     const randomGenerator = (length) => Math.floor(Math.random() * (length - 1))
     let { image, isLogged, name } = useLocation()
     
@@ -22,14 +24,13 @@ const Home = () => {
             const info = await getTvInfo(conteudo[0].lista[index].id)
             setOutdoorInfo(info)
         })()
-        console.log(isLogged)
     }, [image, isLogged, name])
 
     return (
         <>
-            <GlobalStyle />
+            <GlobalStyle theme={theme} />
             
-            <ProfileInfo profilePic={ image || placeHolderUserPic } />
+            <ProfileInfo profilePic={ image || placeHolderUserPic } themes={themes} themeChanger={setTheme} />
 
             <Navegation profilePic={ image || placeHolderUserPic }/>
             {outdoorInfo && <Outdoor content={outdoorInfo} titleId="outdoor-title" />}

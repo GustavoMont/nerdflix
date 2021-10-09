@@ -10,7 +10,7 @@ export const Bar = styled.nav`
     align-items: center;
     transition: all ease .8s;
     h1{
-        color: #d90912;
+        color: var(--main-color);
         font-size: 2.5rem;
         font-style: italic;
         font-weight: 700;

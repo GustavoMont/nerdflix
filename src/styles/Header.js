@@ -18,7 +18,7 @@ export const Header = styled.header`
         justify-content: center;
         flex-direction: column;
         h1{
-            color: #d90912;
+            color: var(--main-color);
             font-size: 3rem;
         }
         padding: 0 48px;

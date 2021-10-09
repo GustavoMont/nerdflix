@@ -15,4 +15,7 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Montserrat', sans-serif;
         background-color: #010101;
     }
+    :root{
+        --main-color: ${ props => props.theme.mainColor };
+    }
 `;

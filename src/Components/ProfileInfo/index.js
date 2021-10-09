@@ -2,7 +2,7 @@ import Modal from '../../styles/Modal'
 import React from 'react'
 
 
-export default function ProfileInfo({ profilePic, name}) {
+export default function ProfileInfo({ profilePic, name, themes, themeChanger}) {
     return (
         <Modal>
             <div className="settings">
@@ -10,8 +10,7 @@ export default function ProfileInfo({ profilePic, name}) {
                     <h1>Olá, {name || 'Luis'} </h1>
                 </header>
                 <div className="temas">
-                    <p>Tema Padrão</p>
-                    <p>Tema Matrix</p>
+                    { themes.map((item) => (<p key={item.name} onClick={() => themeChanger(item)} >Tema {item.name}</p>))}
                 </div>
             </div>
         </Modal>
