@@ -16,6 +16,6 @@ export const GlobalStyle = createGlobalStyle`
         background-color: #010101;
     }
     :root{
-        --main-color: ${ props => props.theme.mainColor };
+        --main-color: '#d90912';
     }
 `;

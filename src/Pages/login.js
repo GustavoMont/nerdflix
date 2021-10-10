@@ -28,7 +28,7 @@ const Login = () => {
 
     return (
         <>
-            <GlobalStyle theme={{name: 'Padrão', mainColor: '#d90912'}} />
+            <GlobalStyle  />
             <Header background={url}>
                 <div className="vertical-gradient">
                     <div className="horizontal-gradient">
