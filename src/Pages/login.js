@@ -16,9 +16,10 @@ const Login = () => {
         setLoggedIn(true)
     }
     
-    const failGoogle = () => setLoggedIn(false)
-    const [loggedIn, setLoggedIn] = useState(true)
+    const [loggedIn, setLoggedIn] = useState(false)
+    const [fail, setFail] = useState(false)
     const [image, setImage] = useState(false)
+    const failGoogle = () => setFail(true)
     
     document.body.onscroll = null
     
@@ -42,6 +43,7 @@ const Login = () => {
                                 cookiePolicy={'single_host_origin'}
                             />
                             {loggedIn ? <Redirect exact to={{ pathname: "/", image: image, isLogged: loggedIn}} /> : ''}
+                            {fail ? <p id="fail-message">Ocorreu algum erro!! Tente Novamente Mais tarde</p> : ''}
                         </div>
                     </div>
                 </div>

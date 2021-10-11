@@ -65,4 +65,8 @@ export const Header = styled.header`
             color: #fff;
         }
     }
+    #fail-message{
+        font-size: 1.5rem;
+        margin: 1rem 0;
+    }
 `
