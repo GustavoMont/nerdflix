@@ -41,6 +41,10 @@ export const Header = styled.header`
             color: green;
             font-weight: 700;
         }
+        .genres{
+            color: gray;
+            margin: 12px 0;
+        }
     }
     .login{
         margin: 0 auto;
