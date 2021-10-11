@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 export const BoxList = styled.main`
-    margin-top: -220px;
+    margin-top: -190px;
     @media(max-width: 700px){
-        margin-top: -120px;
+        margin-top: -43%;
     }
 `;
 
@@ -68,6 +68,9 @@ export const ListContainer = styled.div`
         cursor: pointer;
         transition: ease .3s all;
         opacity: 0;
+        @media(max-width: 1024px){
+            opacity: 1;
+        }
         svg{
             fill: #fff;
             transition: ease .3s all;
@@ -99,7 +102,6 @@ export const ListContainer = styled.div`
             width: 100px;
         }
         .movieRow-left, .movieRow-rigth{
-            opacity: 1;
             width: 35px;
             height: 140px;
             top: 65px;

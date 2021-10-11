@@ -17,5 +17,6 @@ export const GlobalStyle = createGlobalStyle`
     }
     :root{
         --main-color: #d90912;
+        font-size: 16px;
     }
 `;
