@@ -16,6 +16,6 @@ export const GlobalStyle = createGlobalStyle`
         background-color: #010101;
     }
     :root{
-        --main-color: '#d90912';
+        --main-color: #d90912;
     }
 `;

@@ -5,6 +5,7 @@ import MovieList from '../Components/MovieList'
 import Outdoor from '../Components/Outdoor';
 import Navegation from '../Components/Navegation';
 import { useLocation } from 'react-router';
+import { BoxList } from '../styles/ListContainer';
 
 const Home = () => {
     const [content, setContent] = useState([])
@@ -29,11 +30,11 @@ const Home = () => {
             
             <Navegation profilePic={ image }/>
             {outdoorInfo && <Outdoor content={outdoorInfo} titleId="outdoor-title" />}
-            <main style={{ marginTop: -220 }}>
+            <BoxList>
                 {
                     content.map(item => <MovieList content={item} key={item.title} className="movierow"/>)
                 }
-            </main>
+            </BoxList>
         </>
     )
 }

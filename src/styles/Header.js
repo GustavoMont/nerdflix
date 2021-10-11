@@ -17,11 +17,17 @@ export const Header = styled.header`
         display: flex;
         justify-content: center;
         flex-direction: column;
+        padding: 0 48px;
+        @media(max-width: 700px){
+            padding: 0 12px;
+        }
         h1{
             color: var(--main-color);
             font-size: 3rem;
+            @media(max-width: 700px){
+                font-size: 1.9rem;
+            }
         }
-        padding: 0 48px;
     }
     .info{
         max-width: 500px;

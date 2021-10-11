@@ -13,7 +13,8 @@ export const handleLeft = (x, setX) =>{
 
 export const handleRight = (x, setX, lista) => {
     const step = Math.floor(window.innerWidth / 2)
-    const sizeList = lista.length * 180
+    const movieSize = window.innerWidth <= 700 ? 100 : 180 
+    const sizeList = lista.length * movieSize
     const limit = window.innerWidth - sizeList
     let newPos = x - step 
     if ( limit > newPos) {

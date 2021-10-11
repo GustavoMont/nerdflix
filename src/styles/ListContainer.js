@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+export const BoxList = styled.main`
+    margin-top: ${ () => window.innerWidth <= 700 ? "-180px" : "-220px" };
+`;
+
 export const ListContainer = styled.div`
     white-space: nowrap;
     color: white;
@@ -60,10 +64,17 @@ export const ListContainer = styled.div`
         svg{
             fill: #fff;
             transition: ease .3s all;
+            @media(max-width: 700px){
+                transform: scale(0.5);
+            }
             &:hover{
                 fill: #d90912;
                 transform: scale(1.3);
+                @media(max-width: 700px){
+                    transform: scale(1);
+                }
             }
+
         }
     }
     .movieRow-left{
@@ -76,5 +87,16 @@ export const ListContainer = styled.div`
     &:hover .movieRow-rigth{
         opacity: 1;
     }
-
+    @media(max-width: 700px){
+        li{
+            width: 100px;
+        }
+        .movieRow-left, .movieRow-rigth{
+            opacity: 1;
+            width: 35px;
+            height: 140px;
+            top: 65px;
+            background: rgba(256, 100, 0, 0.8);
+        }
+    }
 `
