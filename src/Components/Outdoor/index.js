@@ -1,14 +1,9 @@
 import { Header } from "../../styles/Header"
-
+import { handleOverview } from '../../Utils/handleOutdoor'
 const url = "https://image.tmdb.org/t/p/original"
 
 function Outdoor({ content, titleId }) {
-    const handleOverview = (text) =>{
-        if (text.length > 350) {
-            text = text.slice(0, 347) + '...'
-        }
-        return text;
-    }
+    
     const overview = handleOverview(content.overview)
     return (
         <Header background={url + content.backdrop_path} >
