@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Redirect } from 'react-router-dom'
-import { Header, GlobalStyle } from '../styles'
+import { Header } from '../styles/Header'
+import { GlobalStyle } from '../styles/GlobalStyle'
 import { GoogleLogin } from 'react-google-login';
 
 
@@ -15,12 +16,10 @@ const Login = () => {
         setLoggedIn(true)
     }
     
-    const failGoogle = (response) => {
-        setLoggedIn(false)
-        console.log(response)
-    }
     const [loggedIn, setLoggedIn] = useState(false)
+    const [fail, setFail] = useState(false)
     const [image, setImage] = useState(false)
+    const failGoogle = () => setFail(true)
     
     document.body.onscroll = null
     
@@ -30,7 +29,7 @@ const Login = () => {
 
     return (
         <>
-            <GlobalStyle />
+            <GlobalStyle  />
             <Header background={url}>
                 <div className="vertical-gradient">
                     <div className="horizontal-gradient">
@@ -44,6 +43,7 @@ const Login = () => {
                                 cookiePolicy={'single_host_origin'}
                             />
                             {loggedIn ? <Redirect exact to={{ pathname: "/", image: image, isLogged: loggedIn}} /> : ''}
+                            {fail ? <p id="fail-message">Ocorreu algum erro!! Tente Novamente Mais tarde</p> : ''}
                         </div>
                     </div>
                 </div>

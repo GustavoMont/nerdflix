@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { getContent, getTvInfo } from '../Utils/getContent'
-import { GlobalStyle } from '../styles'
+import { GlobalStyle } from '../styles/GlobalStyle'
 import MovieList from '../Components/MovieList'
 import Outdoor from '../Components/Outdoor';
 import Navegation from '../Components/Navegation';
 import { useLocation } from 'react-router';
+import { BoxList } from '../styles/ListContainer';
 
 const Home = () => {
     const [content, setContent] = useState([])
@@ -25,15 +26,15 @@ const Home = () => {
 
     return (
         <>
-            <GlobalStyle />
+            <GlobalStyle  />
             
             <Navegation profilePic={ image }/>
             {outdoorInfo && <Outdoor content={outdoorInfo} titleId="outdoor-title" />}
-            <main style={{ marginTop: -220 }}>
+            <BoxList>
                 {
                     content.map(item => <MovieList content={item} key={item.title} className="movierow"/>)
                 }
-            </main>
+            </BoxList>
         </>
     )
 }
