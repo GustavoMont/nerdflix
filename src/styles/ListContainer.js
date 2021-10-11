@@ -1,7 +1,10 @@
 import styled from 'styled-components'
 
 export const BoxList = styled.main`
-    margin-top: ${ () => window.innerWidth <= 700 ? "-180px" : "-220px" };
+    margin-top: -220px;
+    @media(max-width: 700px){
+        margin-top: -120px;
+    }
 `;
 
 export const ListContainer = styled.div`
@@ -46,6 +49,10 @@ export const ListContainer = styled.div`
             display: flex;
             align-items: center;
             background-color: var(--main-color);
+            @media(max-width: 700px){
+                height: 154px;
+                font-size: .8rem;
+            }
         }
     }
     .movieRow-left, .movieRow-rigth{
@@ -96,7 +103,6 @@ export const ListContainer = styled.div`
             width: 35px;
             height: 140px;
             top: 65px;
-            background: rgba(256, 100, 0, 0.8);
         }
     }
 `
