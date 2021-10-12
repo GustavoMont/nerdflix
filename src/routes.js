@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 import Home from './Pages';
 import Login from './Pages/login';
+import Movie from './Pages/movie';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
     return (
@@ -25,6 +26,7 @@ export const Routes = () => (
         <Switch>
             <Route component={Login}  path="/login" />
             <PrivateRoute exact path="/" component= {Home} />
+            <Route  path="/watch/:type/:id" component={Movie}/>
         </Switch>
     </Router>
 )

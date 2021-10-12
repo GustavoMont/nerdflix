@@ -3,6 +3,8 @@ import { ListContainer } from '../../styles/ListContainer';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import { imageChecker, handleLeft, handleRight } from '../../Utils/handleMovieList'
+import { Link } from 'react-router-dom'
+
 
 function MovieList({ content, className }) {
     const url = `https://image.tmdb.org/t/p/w300`
@@ -12,9 +14,12 @@ function MovieList({ content, className }) {
         <ListContainer className={className} >
             <h3>{content.title}</h3>
             <ul style={{ marginLeft: x}} >
-                {content.lista.map(item => <li key={`${item.id}`}> 
-                    {imageChecker(url, item.poster_path, item.original_title || item.original_name)}
-                </li>)}
+                {content.lista.map(item => (
+                <li key={`${item.id}`}> 
+                    <Link to={`/watch/${content.type}/${item.id}`}>
+                        {imageChecker(url, item.poster_path, item.original_title || item.original_name)}
+                    </Link>
+                </li>))}
             </ul>
             <div className="movieRow-left">
                 <NavigateBeforeIcon style={{ fontSize: 70 }} onClick={() => handleLeft(x, setX) } />
