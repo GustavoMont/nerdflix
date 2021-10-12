@@ -29,7 +29,7 @@ const Home = () => {
             <GlobalStyle  />
             
             <Navegation profilePic={ image }/>
-            {outdoorInfo && <Outdoor content={outdoorInfo} titleId="outdoor-title" />}
+            {outdoorInfo && <Outdoor content={outdoorInfo} />}
             <BoxList>
                 {
                     content.map(item => <MovieList content={item} key={item.title} className="movierow"/>)
