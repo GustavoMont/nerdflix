@@ -1,7 +1,10 @@
 import styled from 'styled-components'
+
+const url = "https://pipocasclub.com.br/wp-content/uploads/2019/10/netflix-3.jpg"
+
 export const Header = styled.header`
     height: 100vh;
-    background-image: url(${props => props.background});
+    background-image: url(${props => props.background || url});
     background-size: cover;
     background-position: center;
     color: white;

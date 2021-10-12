@@ -4,3 +4,5 @@ export const handleOverview = (text) =>{
     }
     return text;
 }
+
+export const getYear = (dataInteira) => dataInteira !== "" ? dataInteira.split('-')[0] : 'Data desconhecida';

@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     a{
         text-decoration: none;
         transition: ease .3s all;
+        color: inherit;
     }
     body{
         font-family: 'Montserrat', sans-serif;
@@ -18,5 +19,12 @@ export const GlobalStyle = createGlobalStyle`
     :root{
         --main-color: #d90912;
         font-size: 16px;
+    }
+    #error{
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        text-align: center;
+        transform: translate(0%, -50%);
     }
 `;
