@@ -15,4 +15,6 @@ export const handleBackgroundColor = () => {
         opacity += 0.02;
         bar.style.backgroundColor = `rgba(0, 0, 0, ${transparent ? 0 : opacity})`
     }       
-}
+};
+
+export const goBack = (history) => history.push('/');

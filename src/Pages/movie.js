@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { getTvInfo } from '../Utils/getContent';
 import Outdoor from '../Components/Outdoor';
 import { GlobalStyle } from '../styles/GlobalStyle';
+import Cookies from 'js-cookie';
+import Navegation from '../Components/Navegation';
+import { goBack } from '../Utils/handleNavegation'
 
 export default function Movie(){
-
+    const image = JSON.parse(Cookies.get('teste-nerdflix')).imageUrl
     const { type ,id } = useParams()
+    const history = useHistory()
     const [info, setInfo] = useState(null)
     const [message, setMessage] = useState("AGUARDE UM MOMENTO")
     useEffect(()=>{
@@ -19,9 +23,14 @@ export default function Movie(){
         })()
     }, [id, type, message])
 
+    
+
     return(
         <>
             <GlobalStyle />
+
+            <Navegation profilePic={ image } isMovie={true} goBack={() => goBack(history)} />
+
             {info ? <Outdoor content={info} isPage={true}/> : <h1 id="error">{message}</h1>}
         </>
     )

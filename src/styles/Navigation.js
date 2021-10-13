@@ -25,4 +25,12 @@ export const Bar = styled.nav`
         width: 50px;
         border-radius: 50%;
     }
+    #back{
+        color: #fff;
+        cursor: pointer;
+        &:hover{
+            color: var(--main-color);
+            transform: scale(1.3);
+        }
+    }
 `
