@@ -4,14 +4,14 @@ import { GlobalStyle } from '../styles/GlobalStyle'
 import MovieList from '../Components/MovieList'
 import Outdoor from '../Components/Outdoor';
 import Navegation from '../Components/Navegation';
-import { useLocation } from 'react-router';
 import { BoxList } from '../styles/ListContainer';
+import Cookies from 'js-cookie'
 
 const Home = () => {
     const [content, setContent] = useState([])
     const [outdoorInfo, setOutdoorInfo] = useState(null)
     const randomGenerator = (length) => Math.floor(Math.random() * (length - 1))
-    let { image, isLogged } = useLocation()
+    const image = JSON.parse(Cookies.get('teste-nerdflix')).imageUrl
     
     useEffect(() => {
         (async () => {
@@ -21,8 +21,7 @@ const Home = () => {
             const info = await getTvInfo(conteudo[0].lista[index].id)
             setOutdoorInfo(info)
         })()
-        console.log(isLogged)
-    }, [image, isLogged])
+    }, [])
 
     return (
         <>

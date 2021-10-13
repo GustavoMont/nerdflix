@@ -3,30 +3,30 @@ import { Redirect } from 'react-router-dom'
 import { Header } from '../styles/Header'
 import { GlobalStyle } from '../styles/GlobalStyle'
 import { GoogleLogin } from 'react-google-login';
-
+import Cookies from 'js-cookie'
 
 
 
 const url = "https://pipocasclub.com.br/wp-content/uploads/2019/10/netflix-3.jpg"
 
 const Login = () => {
+    
+    const [loggedIn, setLoggedIn] = useState(false)
+    const [fail, setFail] = useState(false)
+    const [image, setImage] = useState(false)
+    const failGoogle = () => setFail(true)
     const responseGoogle = (response) => {
         const { imageUrl } = response.profileObj
         setImage(imageUrl)
         setLoggedIn(true)
     }
     
-    const [loggedIn, setLoggedIn] = useState(false)
-    const [fail, setFail] = useState(false)
-    const [image, setImage] = useState(false)
-    const failGoogle = () => setFail(true)
-    
     document.body.onscroll = null
     
     useEffect(() => {
-
+        const cookieData = JSON.stringify({isLogged: loggedIn, imageUrl: image})
+        Cookies.set('teste-nerdflix', cookieData)
     }, [loggedIn, image])
-
     return (
         <>
             <GlobalStyle  />
