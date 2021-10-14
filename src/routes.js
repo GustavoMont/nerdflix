@@ -3,7 +3,7 @@ import {
     Switch,
     Route,
     Redirect
-} from 'react-router-dom'
+} from 'react-router-dom' // to manage the routes 
 import Home from './Pages';
 import Login from './Pages/login';
 import Movie from './Pages/movie';
@@ -11,13 +11,14 @@ import Cookies from 'js-cookie'
 
 
 const checkLogin = () => {
+    // if doesn't get the the cookie will return false
     try {
         return JSON.parse(Cookies.get('nerdflix')).isLogged 
     } catch (error) {
         return false
     }
 }
-
+// the privateroute will be renderized only if is logged
 const PrivateRoute = ({ component: Component, ...rest }) => {
     return (
     <Route
