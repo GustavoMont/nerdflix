@@ -8,7 +8,7 @@ import Navegation from '../Components/Navegation';
 import { goBack } from '../Utils/handleNavegation'
 
 export default function Movie(){
-    const image = JSON.parse(Cookies.get('teste-nerdflix')).imageUrl
+    const image = JSON.parse(Cookies.get('nerdflix')).imageUrl
     const { type ,id } = useParams()
     const history = useHistory()
     const [info, setInfo] = useState(null)

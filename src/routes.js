@@ -11,10 +11,10 @@ import Cookies from 'js-cookie'
 
 
 const checkLogin = () => {
-    try{
-        return JSON.parse(Cookies.get('teste-nerdflix')).isLogged
-    } catch {
-        return false;
+    try {
+        return JSON.parse(Cookies.get('nerdflix')).isLogged 
+    } catch (error) {
+        return false
     }
 }
 
@@ -37,7 +37,7 @@ export const Routes = () => (
         <Switch>
             <Route component={Login}  path="/login" />
             <PrivateRoute exact path="/" component= {Home} />   
-            <Route  path="/watch/:type/:id" component={Movie}/>
+            <PrivateRoute  path="/watch/:type/:id" component={Movie}/>
         </Switch>
     </Router>
 )

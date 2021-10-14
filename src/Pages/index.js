@@ -12,7 +12,7 @@ const Home = () => {
     const [outdoorInfo, setOutdoorInfo] = useState(null) // this allows to renderize the Outdoor if content is already gotten
     const randomGenerator = (length) => Math.floor(Math.random() * (length - 1)) // return a random number between 0 and serie list length
     
-    const image = JSON.parse(Cookies.get('teste-nerdflix')).imageUrl // get image url from user email from cookies seted on login page
+    const image = JSON.parse(Cookies.get('nerdflix')).imageUrl // get image url from user email from cookies seted on login page
     
     useEffect(() => {
         (async () => {

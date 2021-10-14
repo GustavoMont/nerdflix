@@ -25,7 +25,7 @@ const Login = () => {
     
     useEffect(() => {
         const cookieData = JSON.stringify({isLogged: loggedIn, imageUrl: image})
-        Cookies.set('teste-nerdflix', cookieData)
+        Cookies.set('nerdflix', cookieData)
     }, [loggedIn, image])
     return (
         <>
