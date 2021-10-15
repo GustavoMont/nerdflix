@@ -12,10 +12,10 @@ function MovieList({ content, className }) {
     return (
         <ListContainer className={className} >
             <h3>{content.title}</h3>
-            <ul style={{ marginLeft: x}} > {/*this make the list move*/};
+            <ul style={{ marginLeft: x}} > {/*this make the list move*/}
                 {content.lista.map(item => (
                     <li key={`${item.id}`}> 
-                    <Link to={`/watch/${content.type}/${item.id}`}> {/* TO get more information about the movie */};
+                    <Link to={`/watch/${content.type}/${item.id}`}> {/* TO get more information about the movie */}
                         {imageChecker(url, item.poster_path, item.original_title || item.original_name)}
                     </Link>
                 </li>))}
