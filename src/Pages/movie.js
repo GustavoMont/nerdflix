@@ -6,6 +6,7 @@ import { GlobalStyle } from '../styles/GlobalStyle';
 import Cookies from 'js-cookie'; // to get info seted on Login page
 import Navegation from '../Components/Navegation';
 import { goBack } from '../Utils/handleNavegation' // this function is commented on Util files
+import Footer from '../Components/Footer';
 
 export default function Movie(){
     const image = JSON.parse(Cookies.get('nerdflix')).imageUrl // get the user profile picture 
@@ -32,6 +33,9 @@ export default function Movie(){
             <Navegation profilePic={ image } isMovie={true} goBack={() => goBack(history)} />
 
             {info ? <Outdoor content={info} isPage={true}/> : <h1 id="error">{message}</h1>} {/* if it didn't get the info the message will be shown */}
+
+            <Footer />
+
         </>
     )
 

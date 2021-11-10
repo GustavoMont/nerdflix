@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Footer from '../Components/Footer'
 import { Redirect } from 'react-router-dom' // Component to redirect to home page
 import { Header } from '../styles/Header'
 import { GlobalStyle } from '../styles/GlobalStyle'
@@ -48,6 +49,9 @@ const Login = () => {
                     </div>
                 </div>
             </Header>
+
+            <Footer />
+            
         </>
 
     )

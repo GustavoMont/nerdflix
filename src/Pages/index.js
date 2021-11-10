@@ -6,6 +6,7 @@ import Outdoor from '../Components/Outdoor'; // Outdoor Component
 import Navegation from '../Components/Navegation'; // has the title and profile user picture
 import { BoxList } from '../styles/ListContainer'; // COntainer for all movies/tv shows list
 import Cookies from 'js-cookie' // to get user information
+import Footer from '../Components/Footer';
 
 const Home = () => {
     const [content, setContent] = useState([]) // it receive all content querried on getContent function
@@ -37,6 +38,9 @@ const Home = () => {
                     content.map(item => <MovieList content={item} key={item.title} className="movierow"/> )
                 }
             </BoxList>
+
+            <Footer />
+
         </>
     )
 }
