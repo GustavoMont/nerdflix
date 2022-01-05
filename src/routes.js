@@ -8,7 +8,7 @@ import Home from './Pages';
 import Login from './Pages/login';
 import Movie from './Pages/movie';
 import Cookies from 'js-cookie'
-
+import Favorites from './Pages/favorites';
 
 const checkLogin = () => {
     // if doesn't get the the cookie will return false
@@ -38,6 +38,7 @@ export const Routes = () => (
         <Switch>
             <Route component={Login}  path="/login" />
             <PrivateRoute exact path="/" component= {Home} />   
+            <PrivateRoute path="/favorites" component={Favorites} />
             <PrivateRoute  path="/watch/:type/:id" component={Movie}/>
         </Switch>
     </Router>
