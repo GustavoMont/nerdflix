@@ -1,13 +1,9 @@
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Redirect
-} from 'react-router-dom' // to manage the routes 
-import Home from './Pages';
+import { Route, Routes, Navigate } from 'react-router-dom' // to manage the routes 
+import Home from './Pages/home';
 import Login from './Pages/login';
-import Movie from './Pages/movie';
 import Cookies from 'js-cookie'
+import Movie from './Pages/home/movie';
+import AllTvMovies from './Pages/home/AllTvMovies';
 
 
 const checkLogin = () => {
@@ -18,27 +14,27 @@ const checkLogin = () => {
         return false
     }
 }
-// the privateroute will be renderized only if is logged
-const PrivateRoute = ({ component: Component, ...rest }) => {
-    return (
-    <Route
-        {...rest}
-        render={props => checkLogin() ? (
-                <Component {...props} />
-            ) : (
-                <Redirect to="/login" />
-            )
-        }
-    />
-)}
 
-
-export const Routes = () => (
-    <Router>
-        <Switch>
-            <Route component={Login}  path="/login" />
-            <PrivateRoute exact path="/" component= {Home} />   
-            <PrivateRoute  path="/watch/:type/:id" component={Movie}/>
-        </Switch>
-    </Router>
+const Private = ({ isAuth, children }) => (
+    isAuth() ? (
+        children
+    ) : (
+        <Navigate to="/login" />
+    )
 )
+// the privateroute will be renderized only if is logged
+
+const Rotas = () => (
+    <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={
+                <Private isAuth={checkLogin} >
+                    <Home />
+                </Private>
+        } >
+            <Route index element={<AllTvMovies />} />
+            <Route path="/info/:type/:id" element={<Movie />} />
+        </Route>
+    </Routes>
+)
+export default Rotas

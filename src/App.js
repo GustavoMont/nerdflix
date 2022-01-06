@@ -1,11 +1,14 @@
 import React from 'react';
-import { Routes } from './routes';
-
+import Rotas from './routes';
+import { GlobalStyle } from './styles/GlobalStyle';
+import Footer from './Components/Footer';
 function App() {
   return (
     <>
       <div className="App">
-          <Routes />
+          <GlobalStyle />
+          <Rotas />
+          <Footer />
       </div>
     </>
   );
