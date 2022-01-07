@@ -6,6 +6,7 @@ import Movie from './Pages/home/movie';
 import AllTvMovies from './Pages/home/AllTvMovies';
 import Navegation from './Components/Navegation';
 import { useSelector } from 'react-redux'
+import Favorites from './Pages/home/Favorites';
 
 const checkLogin = () => {
     // if doesn't get the the cookie will return false
@@ -38,6 +39,7 @@ const Rotas = () => {
             } >
                 <Route index element={<AllTvMovies />} />
                 <Route path="/info/:type/:id" element={<Movie />} />
+                <Route path="/favorites" element={<Favorites />} />
             </Route>
         </Routes>
     )
