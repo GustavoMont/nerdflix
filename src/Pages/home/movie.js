@@ -25,7 +25,7 @@ export default function Movie(){
     return(
         <>
 
-            {info ? <Outdoor content={info} isPage={true}/> : <h1 id="error">{message}</h1>} {/* if it didn't get the info the message will be shown */}
+            {info ? <Outdoor content={{...info, type}} isPage={true}/> : <h1 id="error">{message}</h1>} {/* if it didn't get the info the message will be shown */}
 
         </>
     )

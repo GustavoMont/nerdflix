@@ -23,7 +23,7 @@ export default function AllTvMovies() {
     }, [])
     return (
         <>
-            { outdoorInfo && <Outdoor content={outdoorInfo} />} {/*this will render only after the information be gotten */ }
+            { outdoorInfo && <Outdoor content={{...outdoorInfo, type: 'tv'}} />} {/*this will render only after the information be gotten */ }
 
             {/* For each content gotten will return an MovieList Component with this information */ }
             <BoxList>
