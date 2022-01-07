@@ -22,39 +22,6 @@ export const ListContainer = styled.div`
     ul{
         transition: ease .5s all;
     }
-    li{
-        display: inline-block;
-        width: 180px;
-        list-style: none;
-        vertical-align: middle;
-        *{
-            width: 100%;
-            transform: scale(0.9);
-            transition: ease all .3s;
-            cursor: pointer;
-            border-radius: 10px;
-            &:hover{
-                border-radius: 5px;
-                transform: scale(1);
-            }
-        }
-        .alternate{
-            height: 250px;
-            border: 2px solid white;
-            white-space: normal;
-            text-transform: uppercase;
-            text-align: center;
-            font-weight: 700;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            background-color: var(--main-color);
-            @media(max-width: 700px){
-                height: 154px;
-                font-size: .8rem;
-            }
-        }
-    }
     .movieRow-left, .movieRow-rigth{
         background-color: rgba(0,0,0, 0.5);
         position: absolute;
@@ -105,6 +72,40 @@ export const ListContainer = styled.div`
             width: 35px;
             height: 140px;
             top: 65px;
+        }
+    }
+`
+
+export const LiMovie = styled.li`
+    display: inline-block;
+    width: 180px;
+    list-style: none;
+    vertical-align: middle;
+    *{
+    width: 100%;
+        transform: scale(0.9);
+        transition: ease all .3s;
+        cursor: pointer;
+        border-radius: 10px;
+        &:hover{
+            border-radius: 5px;
+            transform: scale(1);
+        }
+    }
+    .alternate{
+        height: 250px;
+        border: 2px solid white;
+        white-space: normal;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 700;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        background-color: var(--main-color);
+        @media(max-width: 700px){
+            height: 154px;
+            font-size: .8rem;
         }
     }
 `
