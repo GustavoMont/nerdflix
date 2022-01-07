@@ -12,7 +12,7 @@ export default function Navegation({ menuHome }) {
     
     return (
         <Bar id="bar">
-            { !menuHome ? <ArrowBack style={{fontSize: 40}} id="back" onClick={() => navigate('/')}/> : (<h1>NERDFLIX</h1>) } {/* If it be renderized on Movie Page it will have an arrowback button */}
+            { !menuHome ? <ArrowBack style={{fontSize: 40}} id="back" onClick={() => navigate(-1)}/> : (<h1>NERDFLIX</h1>) } {/* If it be renderized on Movie Page it will have an arrowback button */}
             <img src={image || placeHolderUserPic } alt="avatar" />
         </Bar>
     )
