@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Footer from '../Components/Footer'
-import { Redirect } from 'react-router-dom' // Component to redirect to home page
+import { Navigate } from 'react-router-dom' // Component to redirect to home page
 import { Header } from '../styles/Header'
-import { GlobalStyle } from '../styles/GlobalStyle'
 import { GoogleLogin } from 'react-google-login'; // lib to help with Google Auth2
 import Cookies from 'js-cookie' // lib to help with cookies
 
@@ -30,7 +28,6 @@ const Login = () => {
     }, [loggedIn, image])
     return (
         <>
-            <GlobalStyle  />
             <Header background={url}>
                 <div className="vertical-gradient">
                     <div className="horizontal-gradient">
@@ -43,14 +40,12 @@ const Login = () => {
                                 onFailure={failGoogle}
                                 cookiePolicy={'single_host_origin'}
                             /> {/* Google Auth Button */}
-                            {loggedIn ? <Redirect exact to={{ pathname: "/", image: image, isLogged: loggedIn}} /> : ''} {/* if login succeed will redirect to home page */}
+                            {loggedIn && <Navigate to={'/'} /> } {/* if login succeed will redirect to home page */}
                             {fail ? <p id="fail-message">Ocorreu algum erro!! Tente Novamente Mais tarde</p> : ''} {/** if fails will show this message */}
                         </div>
                     </div>
                 </div>
             </Header>
-
-            <Footer />
             
         </>
 

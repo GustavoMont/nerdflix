@@ -1,45 +1,45 @@
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Redirect
-} from 'react-router-dom' // to manage the routes 
-import Home from './Pages';
+import { Route, Routes, Navigate } from 'react-router-dom' // to manage the routes 
+import Home from './Pages/home';
 import Login from './Pages/login';
-import Movie from './Pages/movie';
 import Cookies from 'js-cookie'
-import Favorites from './Pages/favorites';
+import Movie from './Pages/home/movie';
+import AllTvMovies from './Pages/home/AllTvMovies';
+import Navegation from './Components/Navegation';
+import { useSelector } from 'react-redux'
 
 const checkLogin = () => {
     // if doesn't get the the cookie will return false
     try {
-        return JSON.parse(Cookies.get('nerdflix')).isLogged 
+        return JSON.parse(Cookies.get('nerdflix')).isLogged
     } catch (error) {
         return false
     }
 }
-// the privateroute will be renderized only if is logged
-const PrivateRoute = ({ component: Component, ...rest }) => {
-    return (
-    <Route
-        {...rest}
-        render={props => checkLogin() ? (
-                <Component {...props} />
-            ) : (
-                <Redirect to="/login" />
-            )
-        }
-    />
-)}
 
-
-export const Routes = () => (
-    <Router>
-        <Switch>
-            <Route component={Login}  path="/login" />
-            <PrivateRoute exact path="/" component= {Home} />   
-            <PrivateRoute path="/favorites" component={Favorites} />
-            <PrivateRoute  path="/watch/:type/:id" component={Movie}/>
-        </Switch>
-    </Router>
+const Private = ({ isAuth, children }) => (
+    isAuth() ? (
+        children
+    ) : (
+        <Navigate to="/login" />
+    )
 )
+// the privateroute will be renderized only if is logged
+
+const Rotas = () => {
+    const menuHome = useSelector(state => state.menuHome)
+    return (
+        <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/" element={
+                <Private isAuth={checkLogin} >
+                    <Navegation  menuHome={menuHome} />
+                    <Home />
+                </Private>
+            } >
+                <Route index element={<AllTvMovies />} />
+                <Route path="/info/:type/:id" element={<Movie />} />
+            </Route>
+        </Routes>
+    )
+}
+export default Rotas
