@@ -1,13 +1,17 @@
 import React from 'react';
-import Rotas from './routes';
-import { GlobalStyle } from './styles/GlobalStyle';
-import Footer from './Components/Footer';
+import { GlobalStyle } from './styles/GlobalStyle' // style to all page
+import Rotas from './routes'; // App routes
+import store from './reducer/AppReducer' // Store from redux
+import { Provider } from 'react-redux' // Provide the redux context 
+import Footer from './Components/Footer'; // App footer
 function App() {
   return (
     <>
       <div className="App">
           <GlobalStyle />
-          <Rotas />
+          <Provider store={store} >
+            <Rotas />
+          </Provider>
           <Footer />
       </div>
     </>
