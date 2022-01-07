@@ -12,6 +12,9 @@ export const GlobalStyle = createGlobalStyle`
         transition: ease .3s all;
         color: inherit;
     }
+    ul{
+        list-style: none;
+    }
     body{
         font-family: 'Montserrat', sans-serif;
         background-color: #010101;
