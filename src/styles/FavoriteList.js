@@ -6,12 +6,15 @@ const FavoritesList = styled.ul`
     align-items: center;
     flex-wrap: wrap;
     width: 90%;
+    border: 2px solid red;
+    margin: 0 auto;
 `
 
 export const FavoritesContainer = styled.div`
     background-color: #0f0f0f;
-    padding: 8rem 5rem;
-    width: 100vw;
+    padding: 8rem 0rem;
+
+    width: 100%;
     @media (max-width: 560px) {
         padding: 8rem 1rem;
         
