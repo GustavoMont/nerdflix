@@ -36,7 +36,7 @@ export const Header = styled.header`
         max-width: 500px;
         text-align: justify;
         div{
-            margin: 24px 0;
+            margin: 12px 0;
             display: flex;
             justify-content: space-between;
         }

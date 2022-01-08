@@ -32,7 +32,7 @@ function Outdoor({ content, isPage }) {
                             { content.number_of_seasons ? <span> {temporadas} </span> : '\t'}
                         </div>
                         <p>{overview}</p>
-                        <div>
+                        <div style={{marginBottom: '-.2rem'}} >
                             <Button type="button" onClick={handleFavoriteList} >
                                 {
                                     isInFavoriteList ?

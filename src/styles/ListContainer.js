@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const BoxList = styled.main`
     margin-top: -190px;
     @media(max-width: 700px){
-        margin-top: -43%;
+        margin-top: -30vh;
     }
 `;
 
