@@ -6,7 +6,6 @@ const FavoritesList = styled.ul`
     align-items: center;
     flex-wrap: wrap;
     width: 90%;
-    border: 2px solid red;
     margin: 0 auto;
 `
 
